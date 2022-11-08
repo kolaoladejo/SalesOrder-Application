@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% block content %}
+{% include 'status.html' %}
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-sm table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Date Ordered</th>
+                    <th>Status</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {% for order in orders %}
+                <tr>
+                    <th>{{order.id}}</th>
+                    <th>{{order.product}}</th>
+                    <th>{{order.product.category}}</th>
+                    <th>{{order.date_created}}</th>
+                    <th>{{order.status}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
